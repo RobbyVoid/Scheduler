@@ -1,7 +1,7 @@
 {
-    "name": "ttree/scheduler",
+    "name": "mcsuite/scheduler",
     "type": "typo3-flow-package",
-    "description": "Simple task scheduler for TYPO3 Flow package",
+    "description": "Simple task scheduler for TYPO3 Flow package, forked from ttreeagency/Scheduler",
     "require": {
         "typo3/flow": "*",
         "mtdowling/cron-expression": "*",
