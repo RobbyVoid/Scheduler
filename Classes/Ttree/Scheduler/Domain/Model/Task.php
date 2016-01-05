@@ -72,6 +72,7 @@ class Task {
 
 	/**
 	 * @var CronExpression
+	 * @ORM\OneToOne
 	 */
 	protected $cronExpression;
 
