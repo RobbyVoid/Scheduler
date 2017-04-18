@@ -39,6 +39,7 @@ class TaskCommandController extends CommandController {
 	 * @param boolean $dryRun do not execute tasks
 	 */
 	public function runCommand($dryRun = FALSE) {
+        error_log("CRON JOB EXECUTED");
 		foreach ($this->taskService->getDueTasks() as $taskDescriptor) {
 			/** @var Task $task */
 			$task = $taskDescriptor['object'];
@@ -52,7 +53,7 @@ class TaskCommandController extends CommandController {
 					$this->tellStatus('[Skipped, dry run] Skipped "%s" (%s)', $arguments);
 				}
 			} catch (\Exception $exception) {
-				$this->tellStatus('[Error] Task "%s" (%s) throw an exception, check your log', $arguments);
+				$this->tellStatus('[Error] Task "%s" (%s) throw an exception, check your log => ' . $exception->getMessage(), $arguments);
 			}
 		}
 	}
